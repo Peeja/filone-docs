@@ -42,7 +42,7 @@ Static output goes to `./build/`.
 
 ### Custom domains
 
-The `filone-docs` Vercel project serves `docs.filone.com`, the canonical host, and `docs.fil.one`, which keeps serving until it redirects to `docs.filone.com`. Their DNS records are managed in Terraform in `fil-one/infrastructure` (`environments/prod/filone-com.tf` and `environments/prod/fil-one.tf`), using the CNAME target Vercel recommends for the project.
+The `filone-docs` Vercel project serves `docs.filone.com`, the canonical host, and `docs.fil.one`, which keeps serving until it redirects to `docs.filone.com`. Their DNS records are managed in Terraform in `fil-one/infrastructure` (`environments/prod/filone-com.tf` and `environments/prod/fil-one.tf`), using the CNAME target Vercel recommends for the project. To attach another domain, add it under **Settings > Domains** in the Vercel project, then add its CNAME, and any `_vercel` verification TXT record Vercel asks for, in that Terraform rather than in the Cloudflare dashboard.
 
 ### Automatic deploys
 
